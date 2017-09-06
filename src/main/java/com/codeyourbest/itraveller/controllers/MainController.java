@@ -1,8 +1,7 @@
-package java.com.codeyourbest.itraveller.controllers;
+package com.codeyourbest.itraveller.controllers;
 
 import java.util.concurrent.atomic.AtomicLong;
 
-import com.codeyourbest.itraveller.controllers.Greeting;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
