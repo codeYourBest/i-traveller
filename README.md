@@ -9,10 +9,15 @@ This project runs on PostgreSQL database.
 
     Install PostgreSQl
     Set port, database name, user and password to the ones set in application.properties or change locally this file.
-    Run all schema scripts from resources/db_scripts
+    create database (execute Create_Database.sql)
+    run "./gradlew flywayMigrate" to update your database
 
 Run
 
-    run ./gradlew bootrun (or gradlew bootrun on Windows)
+    run ./gradlew bootrun to start application
+
+Use it
+
+Enter localhost:8080 url
 
 
