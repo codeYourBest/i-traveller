@@ -29,7 +29,6 @@ flyway {
 	url = 'jdbc:postgresql://localhost:8099/itraveller'
 	user = 'postgres'
 	password = 'koliber88'
-	schemas = ['public']
 }
 
 dependencies {

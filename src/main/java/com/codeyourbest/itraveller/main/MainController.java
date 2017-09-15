@@ -1,4 +1,4 @@
-package com.codeyourbest.itraveller.controllers;
+package com.codeyourbest.itraveller.main;
 
 import java.util.concurrent.atomic.AtomicLong;
 

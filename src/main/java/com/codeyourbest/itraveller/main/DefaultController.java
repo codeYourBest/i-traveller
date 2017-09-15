@@ -1,4 +1,4 @@
-package com.codeyourbest.itraveller.controllers;
+package com.codeyourbest.itraveller.main;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
