@@ -7,8 +7,24 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
 </head>
 <body>
-    <h1>Hello to the i-traveller application.</h1>
-    <h2>You can say Hello - <a href="/greeting">here</a> </h2>
+    <h1>Welcome ITraveller.</h1>
+    <h2>Search for connection</h2>
+
+    <form class="form-inline">
+        <div class="form-group">
+            <label for="from">From:</label>
+            <input type="search" class="form-control" id="from"/>
+        </div>
+        <div class="form-group">
+            <label for="to">To:</label>
+            <input type="search" class="form-control" id="to"/>
+        </div>
+        <div class="checkbox">
+            <label for="date">Date:</label>
+            <input type="date" class="form-control" id="date"/>
+        </div>
+        <button type="submit" class="btn btn-default">Search</button>
+    </form>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>

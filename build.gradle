@@ -1,12 +1,13 @@
 buildscript {
 	ext {
-		springBootVersion = '1.5.6.RELEASE'
+		springBootVersion = '1.5.7.RELEASE'
 	}
 	repositories {
 		mavenCentral()
 	}
 	dependencies {
 		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+		classpath 'org.springframework:springloaded:1.2.6.RELEASE'
 	}
 }
 
@@ -37,6 +38,7 @@ dependencies {
 	compile('org.springframework.boot:spring-boot-starter-data-rest')
 	compile("org.springframework.boot:spring-boot-starter-thymeleaf")
 	compile("org.springframework.boot:spring-boot-devtools")
+
 	compile("org.webjars:jquery:3.2.1")
 	compile("org.webjars:bootstrap:3.3.7")
 	runtime('org.postgresql:postgresql')
