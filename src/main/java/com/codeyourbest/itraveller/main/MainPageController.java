@@ -21,7 +21,7 @@ public class MainPageController {
 
     @PostMapping()
     public String indexSubit() {
-        return "searchResults";
+        return "noresults";
     }
 
 }
