@@ -1,9 +1,13 @@
 package com.codeyourbest.itraveller.search.connection;
 
+import lombok.Data;
+import lombok.NonNull;
+
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.Date;
 
+@Data
 @Entity
 @Table(name = "Connections")
 public class Connection {
@@ -27,35 +31,19 @@ public class Connection {
     @Column(nullable = false)
     private Date validTo = java.sql.Date.valueOf(LocalDate.parse("3000-01-01"));
 
-    public String getFromPlace() {
-        return fromPlace;
-    }
+    private Connection (){}
 
-    public void setFromPlace(String fromPlace) {
+    public Connection(@NonNull String fromPlace, @NonNull String toPlace) {
         this.fromPlace = fromPlace;
-    }
-
-    public String getToPlace() {
-        return toPlace;
-    }
-
-    public void setToPlace(String toPlace) {
         this.toPlace = toPlace;
     }
 
-    public Date getValidFrom() {
-        return validFrom;
-    }
+    public Connection(@NonNull String fromPlace, @NonNull String toPlace,
+                      Date validFrom, Date validTo) {
 
-    public void setValidFrom(Date validFrom) {
+        this.fromPlace = fromPlace;
+        this.toPlace = toPlace;
         this.validFrom = validFrom;
-    }
-
-    public Date getValidTo() {
-        return validTo;
-    }
-
-    public void setValidTo(Date validTo) {
         this.validTo = validTo;
     }
 }
