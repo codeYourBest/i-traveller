@@ -33,14 +33,19 @@ flyway {
 }
 
 dependencies {
+    // backend
 	compile('org.springframework.boot:spring-boot-starter-data-jpa')
 	compile('org.springframework.boot:spring-boot-starter-web')
 	compile('org.springframework.boot:spring-boot-starter-data-rest')
 	compile("org.springframework.boot:spring-boot-starter-thymeleaf")
 	compile("org.springframework.boot:spring-boot-devtools")
-
+    compileOnly 'org.projectlombok:lombok:1.16.18'
+    // UI not really used right now files downloaded manually
 	compile("org.webjars:jquery:3.2.1")
 	compile("org.webjars:bootstrap:3.3.7")
-	runtime('org.postgresql:postgresql')
+    // Runtime
+    runtime('org.postgresql:postgresql')
+    // Test
 	testCompile("org.springframework.boot:spring-boot-starter-test")
+    testCompile 'org.assertj:assertj-core:3.8.0'
 }
