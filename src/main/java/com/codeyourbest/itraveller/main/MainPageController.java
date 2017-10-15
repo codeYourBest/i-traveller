@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
 
-@RequestMapping("/")
 @Controller
+@RequestMapping("/")
 public class MainPageController {
 
     static final String MAIN_VIEW_NAME = "index";

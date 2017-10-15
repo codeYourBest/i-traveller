@@ -1,7 +1,7 @@
 create table Connections (
     ID bigserial not null primary key,
-    fromPlace varchar(50) not null,
-    toPlace varchar(50) not null,
-    validFrom date not null,
-    validTo date not null
+    from_place varchar(50) not null,
+    to_place varchar(50) not null,
+    valid_from date not null,
+    valid_to date not null
 );

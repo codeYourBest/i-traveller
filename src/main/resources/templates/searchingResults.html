@@ -9,12 +9,10 @@
 <body>
     <h1>Connections Found</h1>
 
-    <div th:if="${greeting.list != null}">
+    <div th:if="${connections != null}">
         <h1>Result</h1>
         <ul>
-            <th:block th:object="${connections}">
-                <li th:each="item : *{list}" th:text="${item}">Connection...</li>
-            </th:block>
+            <li th:each="item : *{connections}" th:text="${item.fromPlace}">Connections found</li>
         </ul>
     </div>
 
