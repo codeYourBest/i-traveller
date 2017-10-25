@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import java.util.List;
 
 @Controller
-@RequestMapping("/")
 public class MainPageController {
 
     static final String MAIN_VIEW_NAME = "index";
@@ -26,12 +25,12 @@ public class MainPageController {
         this.connectionRepository = connectionRepository;
     }
 
-    @GetMapping()
+    @GetMapping("/")
     public String index() {
         return MAIN_VIEW_NAME;
     }
 
-    @PostMapping()
+    @PostMapping("/")
     public String searchSubmit(Model model) {
         List<Connection> connectionsFound = connectionRepository.findAll();
         if (connectionsFound.size() > 0) {

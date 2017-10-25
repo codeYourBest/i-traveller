@@ -16,7 +16,6 @@ import java.util.ArrayList;
 import static com.codeyourbest.itraveller.main.MainPageController.MAIN_VIEW_NAME;
 import static com.codeyourbest.itraveller.main.MainPageController.NO_RESULTS_VIEW;
 import static com.codeyourbest.itraveller.main.MainPageController.SEARCHING_RESULTS;
-import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
