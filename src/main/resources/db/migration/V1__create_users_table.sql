@@ -1,12 +1,9 @@
 create table Users (
     ID bigserial not null primary key,
-    Name varchar(50) not null,
-    Surname varchar(50) not null,
-    Email varchar(100) not null,
-    Phone varchar(20) not null
+    username varchar(255) not null,
+    surname varchar(255) not null,
+    email varchar(100) not null,
+    phone varchar(20),
+    password varchar(255) not null,
+    enabled boolean not null default 'true'
 );
-
-insert into Users (Name, Surname, Email, Phone)
-values ('Konrad', 'Laskoski', 'laska121@gmail.com', '111222333');
-
-commit;

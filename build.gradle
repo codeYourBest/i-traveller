@@ -39,8 +39,9 @@ dependencies {
 	compile('org.springframework.boot:spring-boot-starter-data-rest')
 	compile("org.springframework.boot:spring-boot-starter-thymeleaf")
 	compile("org.springframework.boot:spring-boot-devtools")
+//	compile("org.springframework.boot:spring-boot-starter-security")
     compile 'org.projectlombok:lombok:1.16.18'
-    // UI not really used right now files downloaded manually
+    // UI not really used right now files downloaded manually use thymeleaf to import from classpath
 	compile("org.webjars:jquery:3.2.1")
 	compile("org.webjars:bootstrap:3.3.7")
     // Runtime
