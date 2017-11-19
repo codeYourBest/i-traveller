@@ -23,7 +23,7 @@ public class AddConnectionController {
     @GetMapping("/addConnection")
     public String addConnection(
             @RequestParam(value="from") String from,
-            @RequestParam(value="from") String to,
+            @RequestParam(value="to") String to,
             Model model) {
         Connection connection = new Connection(from, to);
         connectionRepository.save(connection);

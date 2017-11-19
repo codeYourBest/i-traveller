@@ -1,13 +1,11 @@
 package com.codeyourbest.itraveller.um;
 
-import com.codeyourbest.itraveller.rm.Role;
 import lombok.Data;
 import lombok.NonNull;
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.persistence.*;
-import java.util.Set;
 
 @Data
 @Entity
@@ -20,8 +18,8 @@ public class User {
     private long id;
 
     @Column(nullable = false)
-    @NotEmpty(message = "*Please provide name")
-    private String name;
+    @NotEmpty(message = "*Please provide username")
+    private String username;
 
     @Column(nullable = false)
     @NotEmpty(message = "*Please provide surname")
@@ -40,20 +38,20 @@ public class User {
 
     private boolean enabled = true;
 
-    @ManyToMany(cascade = CascadeType.ALL)
+    /*@ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
-    private Set<Role> roles;
+    private Set<Role> roles;*/
 
     private User (){}
 
-    public User(@NonNull String name,
+    public User(@NonNull String username,
                 @NonNull String surname,
                 @NonNull String email,
                 @NonNull String phone,
                 @NonNull String password,
-                @NonNull boolean enabled) {
+                boolean enabled) {
 
-        this.name = name;
+        this.username = username;
         this.surname = surname;
         this.email = email;
         this.phone = phone;

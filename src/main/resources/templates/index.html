@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
-<html>
-<head> 
-    <title>Getting Started: Serving Web Content</title> 
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Serving Web Content</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
@@ -10,19 +10,19 @@
     <h1>Welcome ITraveller.</h1>
     <h2>Search for connection</h2>
 
-    <form class="form-inline" method="post">
+    <form action="#" th:action="@{/search}" th:object="${searchingParameters}" class="form-inline" method="post">
         <div class="form-group">
             <label for="from">From:</label>
-            <input type="search" class="form-control" id="from"/>
+            <input type="search" class="form-control" th:field="*{from}" id="from"/>
         </div>
         <div class="form-group">
             <label for="to">To:</label>
-            <input type="search" class="form-control" id="to"/>
+            <input type="search" class="form-control" th:field="*{to}" id="to"/>
         </div>
-        <div class="checkbox">
+        <!--<div class="checkbox">
             <label for="date">Date:</label>
             <input type="date" class="form-control" id="date"/>
-        </div>
+        </div>-->
         <button type="submit" class="btn btn-default">Search</button>
     </form>
 
