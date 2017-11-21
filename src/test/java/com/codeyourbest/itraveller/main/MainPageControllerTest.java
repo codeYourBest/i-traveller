@@ -1,7 +1,7 @@
 package com.codeyourbest.itraveller.main;
 
-import com.codeyourbest.itraveller.search.connection.Connection;
-import com.codeyourbest.itraveller.search.connection.ConnectionRepository;
+import com.codeyourbest.itraveller.domain.search.connection.Connection;
+import com.codeyourbest.itraveller.domain.search.connection.ConnectionRepository;
 import lombok.val;
 import org.junit.Rule;
 import org.junit.Test;

@@ -1,6 +1,6 @@
 package com.codeyourbest.itraveller.admin.connection;
 
-import com.codeyourbest.itraveller.search.connection.ConnectionRepository;
+import com.codeyourbest.itraveller.domain.search.connection.ConnectionRepository;
 import org.junit.Rule;
 import org.junit.Test;
 import org.mockito.InjectMocks;

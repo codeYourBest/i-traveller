@@ -1,7 +1,7 @@
 package com.codeyourbest.itraveller.admin.connection;
 
-import com.codeyourbest.itraveller.search.connection.Connection;
-import com.codeyourbest.itraveller.search.connection.ConnectionRepository;
+import com.codeyourbest.itraveller.domain.search.connection.Connection;
+import com.codeyourbest.itraveller.domain.search.connection.ConnectionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -23,7 +23,7 @@ public class AddConnectionController {
     @GetMapping("/addConnection")
     public String addConnection(
             @RequestParam(value="from") String from,
-            @RequestParam(value="from") String to,
+            @RequestParam(value="to") String to,
             Model model) {
         Connection connection = new Connection(from, to);
         connectionRepository.save(connection);
