@@ -6,6 +6,7 @@ import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.persistence.*;
+import java.util.HashSet;
 import java.util.Set;
 
 @Data
@@ -20,11 +21,15 @@ public class User {
 
     @Column(nullable = false)
     @NotEmpty(message = "*Please provide name")
-    private String name;
+    private String username;
 
     @Column(nullable = false)
-    @NotEmpty(message = "*Please provide surname")
-    private String surname;
+    @NotEmpty(message = "*Please provide firstname")
+    private String firstName;
+
+    @Column(nullable = false)
+    @NotEmpty(message = "*Please provide lastname")
+    private String lastName;
 
     @Column(nullable = false)
     @Email(message = "*Please provide a valid Email")
@@ -41,19 +46,20 @@ public class User {
 
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
-    private Set<Role> roles;
+    private Set<Role> roles = new HashSet<>();
 
     private User (){}
 
-    public User(@NonNull String name,
-                @NonNull String surname,
+    public User(@NonNull String firstName,
+                @NonNull String lastName,
                 @NonNull String email,
                 @NonNull String phone,
                 @NonNull String password,
                 @NonNull boolean enabled) {
 
-        this.name = name;
-        this.surname = surname;
+        this.username = email;
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.email = email;
         this.phone = phone;
         this.password = password;
