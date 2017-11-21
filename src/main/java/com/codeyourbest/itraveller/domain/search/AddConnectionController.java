@@ -1,7 +1,7 @@
-package com.codeyourbest.itraveller.admin.connection;
+package com.codeyourbest.itraveller.domain.search;
 
-import com.codeyourbest.itraveller.domain.search.connection.Connection;
-import com.codeyourbest.itraveller.domain.search.connection.ConnectionRepository;
+import com.codeyourbest.itraveller.domain.search.persistance.Connection;
+import com.codeyourbest.itraveller.domain.search.ConnectionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class AddConnectionController {
 
-    final static String ADD_CONNECTION_VIEW = "newConnection";
+    public final static String ADD_CONNECTION_VIEW = "newConnection";
 
     private ConnectionRepository connectionRepository;
 

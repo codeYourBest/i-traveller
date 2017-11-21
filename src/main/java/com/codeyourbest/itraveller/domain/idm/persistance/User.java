@@ -1,6 +1,5 @@
-package com.codeyourbest.itraveller.domain.um;
+package com.codeyourbest.itraveller.domain.idm.persistance;
 
-import com.codeyourbest.itraveller.domain.security.Role;
 import lombok.Data;
 import lombok.NonNull;
 import org.hibernate.validator.constraints.Email;

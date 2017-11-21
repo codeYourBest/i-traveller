@@ -1,4 +1,4 @@
-package com.codeyourbest.itraveller.home;
+package com.codeyourbest.itraveller.domain.main.home;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

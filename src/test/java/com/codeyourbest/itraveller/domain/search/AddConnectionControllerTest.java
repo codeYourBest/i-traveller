@@ -1,6 +1,5 @@
-package com.codeyourbest.itraveller.admin.connection;
+package com.codeyourbest.itraveller.domain.search;
 
-import com.codeyourbest.itraveller.domain.search.connection.ConnectionRepository;
 import org.junit.Rule;
 import org.junit.Test;
 import org.mockito.InjectMocks;
@@ -9,7 +8,7 @@ import org.mockito.junit.MockitoJUnit;
 import org.mockito.junit.MockitoRule;
 import org.springframework.test.web.servlet.MockMvc;
 
-import static com.codeyourbest.itraveller.admin.connection.AddConnectionController.ADD_CONNECTION_VIEW;
+import static com.codeyourbest.itraveller.domain.search.AddConnectionController.ADD_CONNECTION_VIEW;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.view;
 import static org.springframework.test.web.servlet.setup.MockMvcBuilders.standaloneSetup;

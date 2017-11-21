@@ -1,6 +1,5 @@
-package com.codeyourbest.itraveller.domain.security;
+package com.codeyourbest.itraveller.domain.idm.persistance;
 
-import com.codeyourbest.itraveller.domain.um.User;
 import lombok.Data;
 
 import javax.persistence.*;

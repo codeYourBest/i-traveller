@@ -1,4 +1,4 @@
-package com.codeyourbest.itraveller.domain.search.connection;
+package com.codeyourbest.itraveller.domain.search.persistance;
 
 import lombok.Data;
 import lombok.NonNull;

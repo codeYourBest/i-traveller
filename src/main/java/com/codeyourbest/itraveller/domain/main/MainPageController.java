@@ -1,7 +1,7 @@
-package com.codeyourbest.itraveller.main;
+package com.codeyourbest.itraveller.domain.main;
 
-import com.codeyourbest.itraveller.domain.search.connection.Connection;
-import com.codeyourbest.itraveller.domain.search.connection.ConnectionRepository;
+import com.codeyourbest.itraveller.domain.search.persistance.Connection;
+import com.codeyourbest.itraveller.domain.search.ConnectionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,9 +13,9 @@ import java.util.List;
 @Controller
 public class MainPageController {
 
-    static final String MAIN_VIEW_NAME = "index";
-    static final String NO_RESULTS_VIEW = "noresults";
-    static final String SEARCHING_RESULTS = "searchingResults";
+    public static final String MAIN_VIEW_NAME = "index";
+    public static final String NO_RESULTS_VIEW = "noresults";
+    public static final String SEARCHING_RESULTS = "searchingResults";
 
     private ConnectionRepository connectionRepository;
 
