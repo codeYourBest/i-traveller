@@ -1,5 +1,6 @@
 package com.codeyourbest.itraveller.domain.idm.persistance;
 
+import com.codeyourbest.itraveller.domain.idm.RoleEnum;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -23,7 +24,7 @@ public class Role {
 
     private Role(){};
 
-    public Role(String name) {
-        this.name = name;
+    public Role(RoleEnum role) {
+        this.name = role.getRoleName();
     }
 }

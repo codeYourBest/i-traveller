@@ -1,5 +1,6 @@
 package com.codeyourbest.itraveller;
 
+import com.codeyourbest.itraveller.domain.idm.RoleEnum;
 import com.codeyourbest.itraveller.domain.idm.persistance.Role;
 import com.codeyourbest.itraveller.domain.idm.persistance.User;
 import com.codeyourbest.itraveller.domain.idm.pub.UserService;
@@ -31,7 +32,7 @@ public class ITravellerApplication implements CommandLineRunner {
 		String email = "klaskoski@gmail.com";
 		User user = UserUtils.createBasicUser(email);
 		Set<Role> userRoles = new HashSet<>();
-		userRoles.add(new Role("admin"));
+		userRoles.add(new Role(RoleEnum.ADMIN));
 
 		userService.createUser(user, userRoles);
 		LOG.info("created user {}", user);

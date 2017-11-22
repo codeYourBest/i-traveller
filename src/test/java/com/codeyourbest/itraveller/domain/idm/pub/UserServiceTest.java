@@ -1,5 +1,6 @@
 package com.codeyourbest.itraveller.domain.idm.pub;
 
+import com.codeyourbest.itraveller.domain.idm.RoleEnum;
 import com.codeyourbest.itraveller.domain.idm.persistance.Role;
 import com.codeyourbest.itraveller.domain.idm.persistance.User;
 import org.junit.Assert;
@@ -17,7 +18,7 @@ import java.util.Set;
 public class UserServiceTest {
 
     @Autowired
-    protected UserService userService;
+    private UserService userService;
 
     @Test
     public void createNewUser() throws Exception {
@@ -30,7 +31,7 @@ public class UserServiceTest {
     private User createUser(String email) {
         User user = UserUtils.createBasicUser(email);
         Set<Role> userRoles = new HashSet<>();
-        userRoles.add(new Role("admin"));
+        userRoles.add(new Role(RoleEnum.USER));
 
         user = userService.createUser(user, userRoles);
         return user;
