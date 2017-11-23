@@ -1,4 +1,4 @@
-package com.codeyourbest.itraveller.domain.search;
+package com.codeyourbest.itraveller.domain.search.repositories;
 
 import com.codeyourbest.itraveller.domain.search.persistance.Connection;
 import org.springframework.data.jpa.repository.JpaRepository;

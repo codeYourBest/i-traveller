@@ -1,8 +1,8 @@
-package com.codeyourbest.itraveller.search.controller;
+package com.codeyourbest.itraveller.domain.search;
 
-import com.codeyourbest.itraveller.domain.search.ConnectionRepository;
+import com.codeyourbest.itraveller.domain.search.model.SearchingParameters;
 import com.codeyourbest.itraveller.domain.search.persistance.Connection;
-import com.codeyourbest.itraveller.search.model.SearchingParameters;
+import com.codeyourbest.itraveller.domain.search.repositories.ConnectionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -27,6 +27,12 @@ public class SearchController {
     public SearchController(ConnectionRepository connectionRepository) {
         this.connectionRepository = connectionRepository;
     }
+
+    /*@GetMapping("/search")
+    public String greetingForm(final Model model) {
+        model.addAttribute("searchingParameters", new SearchingParameters());
+        return NO_RESULTS_VIEW;
+    }*/
 
     @PostMapping("/search")
     public String showConnections(final SearchingParameters searchingParameters, final Model model) {

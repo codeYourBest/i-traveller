@@ -1,4 +1,4 @@
-package com.codeyourbest.itraveller.domain.search.logic;
+package com.codeyourbest.itraveller.domain.search.pub;
 
 
 import com.codeyourbest.itraveller.domain.search.persistance.Connection;

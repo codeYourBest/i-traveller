@@ -1,22 +1,25 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-<head>
-    <title>Found Connections</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
-</head>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="common/header :: common-header"></head>
 <body>
-    <h1>Connections Found</h1>
+<div th:replace="common/navbar :: common-navbar"></div>
 
-    <div th:if="${connections != null}">
-        <h1>Result</h1>
-        <ul>
-            <li th:each="item : *{connections}" th:text="${item.fromPlace}">Connections found</li>
-        </ul>
+<div class="container">
+
+    <div class="jumbotron text-center">
+
+        <h1 th:text="#{searchingResults.h1.text}"></h1>
+
+        <div th:if="${connections != null}">
+            <p class="lead" th:text="#{searchingResults.p.lead}"></p>
+            <ul>
+                <li th:each="item : *{connections}" th:text="${item.fromPlace}">Connections found</li>
+            </ul>
+        </div>
+
     </div>
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</div>
+<div th:replace="common/header :: before-body-scripts" ></div>
 </body>
 </html>
