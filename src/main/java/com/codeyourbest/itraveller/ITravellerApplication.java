@@ -44,6 +44,12 @@ public class ITravellerApplication implements CommandLineRunner {
         Connection connection = new Connection("Krakow", "Katowice", Date.from(Instant.now()),
                 Date.from(Instant.now().plusMillis(1000000000000L)));
         connectionRepository.save(connection);
+        connection = new Connection("Tarnow", "Katowice", Date.from(Instant.now()),
+                Date.from(Instant.now().plusMillis(1000000000000L)));
+        connectionRepository.save(connection);
+        connection = new Connection("Krakow", "Tarnow", Date.from(Instant.now()),
+                Date.from(Instant.now().plusMillis(1000000000000L)));
+        connectionRepository.save(connection);
         LOG.info("created user {}", user);
     }
 }

@@ -11,10 +11,17 @@
 
         <h1 th:text="#{searchingResults.h1.text}"></h1>
 
-        <div th:if="${connections != null}">
-            <p class="lead" th:text="#{searchingResults.p.lead}"></p>
+        <!--/*@thymesVar id="connections" type="java.util.List"*/-->
+        <div th:if="${connections} != null">
             <ul>
-                <li th:each="item : *{connections}" th:text="${item.fromPlace}">Connections found</li>
+                <!--/*@thymesVar id="connection" type="com.codeyourbest.itraveller.domain.search.persistance.Connection"*/-->
+                <li th:each="connection : ${connections}">
+                    <a href="#">
+                        <span th:text="${connection.fromPlace}"></span>
+                        -
+                        <span th:text="${connection.toPlace}"></span>
+                    </a>
+                </li>
             </ul>
         </div>
 
