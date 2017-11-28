@@ -17,9 +17,9 @@ import java.util.List;
 @Controller
 public class SearchController {
 
-    private static final String SEARCHING_RESULTS_VIEW = "searchingResults";
+    public static final String SEARCHING_RESULTS_VIEW = "searchingResults";
 
-    private static final String NO_RESULTS_VIEW = "noResults";
+    public static final String NO_RESULTS_VIEW = "noResults";
 
     private ConnectionRepository connectionRepository;
 

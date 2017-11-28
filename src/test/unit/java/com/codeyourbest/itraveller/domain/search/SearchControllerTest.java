@@ -1,4 +1,4 @@
-package com.codeyourbest.itraveller.domain.main;
+package com.codeyourbest.itraveller.domain.search;
 
 import com.codeyourbest.itraveller.domain.search.persistance.Connection;
 import com.codeyourbest.itraveller.domain.search.repositories.ConnectionRepository;
@@ -13,39 +13,33 @@ import org.springframework.test.web.servlet.MockMvc;
 
 import java.util.ArrayList;
 
-import static com.codeyourbest.itraveller.domain.main.MainPageController.MAIN_VIEW_NAME;
+import static com.codeyourbest.itraveller.domain.search.SearchController.NO_RESULTS_VIEW;
+import static com.codeyourbest.itraveller.domain.search.SearchController.SEARCHING_RESULTS_VIEW;
 import static org.mockito.Mockito.when;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.view;
 import static org.springframework.test.web.servlet.setup.MockMvcBuilders.standaloneSetup;
 
-public class MainPageControllerTest {
+public class SearchControllerTest {
 
-    private static final String FROM_PLACE = "Kraków";
-    private static final String TO_PLACE = "Warszawa";
+    private static final String FROM_PLACE = "Krakow";
+    private static final String TO_PLACE = "Tarnow";
 
     @Rule
     public MockitoRule rule = MockitoJUnit.rule();
+
     @Mock
     private ConnectionRepository connectionRepository;
+
     @InjectMocks
-    private MainPageController controller;
-
-    @Test
-    public void shouldShowMainPage() throws Exception {
-        MockMvc mockMvc = standaloneSetup(controller).build();
-
-        mockMvc.perform(get("/"))
-                .andExpect(view().name(MAIN_VIEW_NAME));
-    }
+    private SearchController controller;
 
     @Test
     public void shouldDisplayNoResultsIfNoConnectionFound() throws Exception {
         MockMvc mockMvc = standaloneSetup(controller).build();
         when(connectionRepository.findAll()).thenReturn(new ArrayList<>());
 
-        mockMvc.perform(post("/")
+        mockMvc.perform(post("/search")
                 .param("from", FROM_PLACE)
                 .param("to", TO_PLACE))
                 .andExpect(view().name(NO_RESULTS_VIEW));
@@ -58,9 +52,10 @@ public class MainPageControllerTest {
         connectionsFound.add(new Connection(FROM_PLACE,TO_PLACE));
         when(connectionRepository.findAll()).thenReturn(connectionsFound);
 
-        mockMvc.perform(post("/")
+        mockMvc.perform(post("/search")
                 .param("from", FROM_PLACE)
                 .param("to", TO_PLACE))
-                .andExpect(view().name(SEARCHING_RESULTS));
+                .andExpect(view().name(SEARCHING_RESULTS_VIEW));
     }
+
 }

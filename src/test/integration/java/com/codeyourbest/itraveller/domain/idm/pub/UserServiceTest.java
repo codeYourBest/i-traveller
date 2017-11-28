@@ -22,7 +22,7 @@ public class UserServiceTest {
 
     @Test
     public void createNewUser() throws Exception {
-        User user = createUser("test.UserServiceTest.createNewUser.@gmail.com");
+        User user = createUser("test.UserServiceTest.createNewUser@gmail.com");
 
         Assert.assertNotNull(user);
         Assert.assertNotEquals(0, user.getId());
