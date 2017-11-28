@@ -38,11 +38,10 @@ dependencies {
 	compile('org.springframework.boot:spring-boot-starter-web')
 	compile('org.springframework.boot:spring-boot-starter-data-rest')
 	compile("org.springframework.boot:spring-boot-starter-thymeleaf")
-//	compile group: 'org.thymeleaf.extras', name: 'thymeleaf-extras-springsecurity4', version: '2.1.2.RELEASE'
+	compile group: 'org.thymeleaf.extras', name: 'thymeleaf-extras-springsecurity4', version: '2.1.2.RELEASE'
 	compile("org.springframework.boot:spring-boot-devtools")
-//	compile("org.springframework.boot:spring-boot-starter-security")
+	compile("org.springframework.boot:spring-boot-starter-security")
     compile 'org.projectlombok:lombok:1.16.18'
-    // UI not really used right now files downloaded manually use thymeleaf to import from classpath
 	compile("org.webjars:jquery:3.2.1")
 	compile("org.webjars:bootstrap:3.3.7")
 	compile group: 'ch.qos.logback', name: 'logback-classic', version: '1.2.3'
