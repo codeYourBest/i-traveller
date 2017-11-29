@@ -34,7 +34,7 @@ public class ITravellerApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        String email = "klaskoski@gmail.com";
+        String email = "codeyourbest@wp.pl";
         User user = UserUtils.createBasicUser(email);
         Set<Role> userRoles = new HashSet<>();
         userRoles.add(new Role(RoleEnum.ADMIN));

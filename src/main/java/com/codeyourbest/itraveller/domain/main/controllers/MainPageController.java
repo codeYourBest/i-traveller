@@ -1,4 +1,4 @@
-package com.codeyourbest.itraveller.domain.main;
+package com.codeyourbest.itraveller.domain.main.controllers;
 
 import com.codeyourbest.itraveller.domain.search.model.SearchingParameters;
 import org.springframework.stereotype.Controller;
@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class MainPageController {
 
-    static final String MAIN_VIEW_NAME = "index";
+    public static final String MAIN_VIEW_NAME = "index";
 
     @GetMapping("/")
     public String index(final Model model) {
