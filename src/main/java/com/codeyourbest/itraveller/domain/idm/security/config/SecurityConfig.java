@@ -1,10 +1,9 @@
-package com.codeyourbest.itraveller.domain.security.config;
+package com.codeyourbest.itraveller.domain.idm.security.config;
 
 import com.codeyourbest.itraveller.domain.idm.pub.UserSecurityService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.core.env.Environment;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -43,7 +42,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers(ONLY_AUTHENTICATED_USERS_URLS).authenticated()
                 .anyRequest().permitAll()
                 .and()
-                .formLogin().loginPage("/login").defaultSuccessUrl("/payload")
+                .formLogin().loginPage("/login").defaultSuccessUrl("/")
                 .failureUrl("/login?error").permitAll()
                 .and()
                 .logout().permitAll();
