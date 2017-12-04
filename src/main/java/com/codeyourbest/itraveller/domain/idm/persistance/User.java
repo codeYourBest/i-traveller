@@ -1,9 +1,7 @@
 package com.codeyourbest.itraveller.domain.idm.persistance;
 
 import lombok.Data;
-import lombok.Getter;
 import lombok.NonNull;
-import lombok.Setter;
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.security.core.GrantedAuthority;
@@ -17,7 +15,7 @@ import java.util.Set;
 
 @Data
 @Entity
-public class User  implements Serializable, UserDetails {
+public class User implements Serializable, UserDetails {
 
     private static final long serialVersionUID = 1L;
 
@@ -27,7 +25,7 @@ public class User  implements Serializable, UserDetails {
     private long id;
 
     @Column(nullable = false)
-    @NotEmpty(message = "*Please provide name")
+    @NotEmpty(message = "*Please provide email") //username is email
     private String username;
 
     @Column(nullable = false)
@@ -65,7 +63,6 @@ public class User  implements Serializable, UserDetails {
     public User(@NonNull String firstName,
                 @NonNull String lastName,
                 @NonNull String email,
-                @NonNull String phone,
                 @NonNull String password,
                 boolean enabled) {
 
@@ -73,7 +70,6 @@ public class User  implements Serializable, UserDetails {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
-        this.phone = phone;
         this.password = password;
         this.enabled = enabled;
     }

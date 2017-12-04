@@ -1,5 +1,7 @@
 package com.codeyourbest.itraveller.domain.idm.pub;
 
+import com.codeyourbest.itraveller.domain.idm.RoleEnum;
+import com.codeyourbest.itraveller.domain.idm.persistance.Role;
 import com.codeyourbest.itraveller.domain.idm.persistance.User;
 
 public class UserUtils {
@@ -13,10 +15,20 @@ public class UserUtils {
                 "firstName",
                 "lastName",
                 email,
-                "111222333",
                 "secret",
                 true
         );
     }
 
+    public static User createUserFromForm(SignupForm signupForm) {
+        User user = new User(
+                signupForm.getName(),
+                signupForm.getLastName(),
+                signupForm.getEmail(),
+                signupForm.getPassword(),
+                true);
+
+        user.getRoles().add(new Role(RoleEnum.USER));
+        return user;
+    }
 }
