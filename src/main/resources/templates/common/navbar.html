@@ -27,6 +27,9 @@
                             <button type="submit" th:text="#{navbar.logout.text}" class="btn btn-primary" ></button>
                         </form>
                     </li>
+                    <li th:if="not ${#authorization.expression('isAuthenticated()')}">
+                        <a th:text="#{navbar.signup.title}" href="/signup"></a>
+                    </li>
                 </ul>
             </div><!--/.nav-collapse -->
         </div>

@@ -41,6 +41,7 @@ dependencies {
 	compile group: 'org.thymeleaf.extras', name: 'thymeleaf-extras-springsecurity4', version: '2.1.2.RELEASE'
 	compile("org.springframework.boot:spring-boot-devtools")
 	compile("org.springframework.boot:spring-boot-starter-security")
+	compile("org.hibernate:hibernate-validator")
     compile 'org.projectlombok:lombok:1.16.18'
 	compile("org.webjars:jquery:3.2.1")
 	compile("org.webjars:bootstrap:3.3.7")
